@@ -16,11 +16,14 @@ let endPoint = prompt("Choose your destination form your following: London, Bris
 let pricePerKM = 0.21
 let ticketPrice 
 
+startPointLowerCase = startPoint.toLocaleLowerCase()
+endPointLowerCase = endPoint.toLocaleLowerCase()
+
 let i=0
-if (endPoint == "London")  i=0
-if (endPoint == "Bristol") i=1
-if (endPoint == "Oxford") i=2
-if (endPoint == "Manchester") i=3
+if (endPointLowerCase == "london")  i=0
+if (endPointLowerCase == "bristol") i=1
+if (endPointLowerCase == "oxford") i=2
+if (endPointLowerCase == "manchester") i=3
 
 
 let fromLondon = [0, 10, 20, 30]
@@ -28,19 +31,19 @@ let fromBristol = [10, 0, 30, 40]
 let fromOxford = [20, 30, 0, 20]
 let fromManchester = [30, 40, 20, 0]
 
-if (startPoint == "London"){
+if (startPointLowerCase === "london"){
     ticketPrice = fromLondon[i] * pricePerKM
 }
 
-if (startPoint == "Bristol"){
+if (startPointLowerCase === "bristol"){
     ticketPrice = fromBristol[i] * pricePerKM
 }
 
-if (startPoint == "Oxford"){
+if (startPointLowerCase === "oxford"){
     ticketPrice = fromOxford[i] * pricePerKM
 }
 
-if (startPoint == "Manchester"){
+if (startPointLowerCase === "manchester"){
     ticketPrice = fromManchester[i] * pricePerKM
 }
 
